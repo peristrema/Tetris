@@ -73,6 +73,8 @@ def inici():  # deixa caure una peça
             caient[1][5]=1
         else:
             caient[0][6]=1
+
+        myFrame.after(10,mov)
            
 def mov():
     global altura
@@ -151,14 +153,18 @@ def mov():
                         estatic_l[i][j].place(x=30*j,y=30*i, width=29, height=29)
     altura+=1
     print (altura, case, tocant, fin)
-    if (tocant==True): return 
-    myFrame.after(10,mov())
+    if (tocant==True and fin==False): 
+        myFrame.after(10,inici)
+    elif(tocant==False and fin==False):
+        myFrame.after(10,mov)
+    else:
+        return
 
 #################################################################
 
-while (fin==False):
-    inici()
-    mov()
+# while (fin==False):
+inici()
+    # mov()
 
-myFrame.after(10,mov())    
+myFrame.after(10,mov)    
 root.mainloop()
