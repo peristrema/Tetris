@@ -162,9 +162,5 @@ def mov():
 
 #################################################################
 
-# while (fin==False):
-inici()
-    # mov()
-
-myFrame.after(10,mov)    
+myFrame.after(10,inici)    
 root.mainloop()
